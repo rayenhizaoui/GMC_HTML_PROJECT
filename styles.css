@@ -87,12 +87,12 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* ensures padding is included in width/height */
+
 }
 
 textarea {
     resize: vertical;
-    /* allows vertical resizing */
+
 }
 
 button {
@@ -118,7 +118,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* smooth transition */
+
 }
 
 button:hover {
@@ -127,18 +127,18 @@ button:hover {
 
 select {
     appearance: none;
-    /* remove default appearance */
+
     -webkit-appearance: none;
-    /* for older versions of Safari */
+
     padding-right: 30px;
-    /* add space for custom arrow */
+
     background: url('arrow-down.png') no-repeat right center;
-    /* custom arrow */
+
 }
 
 select:hover {
     border-color: #555;
-    /* change border color on hover */
+
 }
 
 select {
@@ -148,12 +148,12 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* ensures padding is included in width/height */
+
 }
 
 textarea {
     resize: vertical;
-    /* allows vertical resizing */
+
 }
 
 button[type="submit"]:hover {

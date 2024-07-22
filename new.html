@@ -4,43 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            const options = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        function showMessage(event) {
+            event.preventDefault();
+            const message = document.querySelector(".hidden-message");
+            message.style.display = "block";
+        }
+    </script>
+
+
+
 </head>
 
-
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-
-
-
 <body>
-    <section id="about">
-        <h2>About Me </h2>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
         <br>
         <img src="rayen.jpg" alt="Picture of Rayen" width="200" height="200">
-        <p>Welcome to my personal portfolio! I am Rayen , a passionate web developer with experience in HTML, CSS, and
+        <p>Welcome to my personal portfolio! I am Rayen, a passionate web developer with experience in HTML, CSS, and
             JavaScript.</p>
-
     </section>
 
-    <section id="work">
+    <section id="work" class="work-section">
         <h2>My Work</h2>
         <ul>
-            <li><strong>Project 1:</strong> Project 1 .</li>
+            <li><strong>Project 1:</strong> Project 1.</li>
             <li><strong>Project 2:</strong> Project 2.</li>
-            <li><strong>Project 3:</strong> Project 3 .</li>
+            <li><strong>Project 3:</strong> Project 3.</li>
         </ul>
-
-
-
         <br>
         <audio controls>
             <source
@@ -48,7 +72,6 @@
                 type="audio/mpeg">
             Please Check the audio Extension
         </audio>
-
         <br>
         <table border="1">
             <tr>
@@ -67,27 +90,15 @@
                 <td>JS</td>
             </tr>
         </table>
-
-
     </section>
 
-    <section id="resume">
+    <section id="resume" class="resume-section">
         <h2>Resume</h2>
         <iframe width="420" height="315" src="https://www.youtube.com/embed/zcTFG_F0FRs"></iframe>
-
         <br>
-
-        <!-- <video width="320" height="240" autoplay>
-            <source
-                src="C:\Users\Admin\Desktop\GoMyCode\next\No Copyright Music __ It's Easy __ 3-Second Intro_Outro Music..mp4"
-                type="video/mp4" />
-            Please Check the video extension.
-        </video> -->
-
-
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2>Contact Me</h2>
         <form action="/submit_contact_form" method="post">
             <label for="name">Name:</label><br>
@@ -99,19 +110,19 @@
             <label for="message">Message:</label><br>
             <textarea id="message" name="message" required></textarea><br>
 
-            <label for="name">Your Project is :</label><br>
-            <select>
+            <label for="project">Your Project is:</label><br>
+            <select id="project" name="project">
                 <option value="Project1">Project 1</option>
                 <option value="Project2">Project 2</option>
                 <option value="Project3">Project 3</option>
             </select>
             <br>
-            <input type="submit" value="Submit">
+            <button type="submit">Submit</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Rayen Project . All rights reserved.</p>
+        <p>&copy; 2024 Rayen Project. All rights reserved.</p>
         <p>
             <a href="https://www.linkedin.com/in/rayen-hizaoui-9741172b5/" target="_blank">LinkedIn</a> |
             <a href="https://github.com/rayenhizaoui" target="_blank">GitHub</a> |
